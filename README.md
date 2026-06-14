@@ -1,2 +1,2 @@
-# WorldCup20266
-World Cup 202
+# WorldCup2026
+World Cup 2026
