@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platell Family Pool – World Cup 2026</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(150deg, #1a0536 0%, #0d0d2b 100%);
+    min-height: 100vh; padding: 20px 12px 40px; color: #fff;
+  }
+  .header { text-align:center; margin-bottom:24px; }
+  .trophy { font-size:40px; display:block; margin-bottom:8px; }
+  h1 { font-size:1.5rem; font-weight:900; letter-spacing:3px; text-transform:uppercase; }
+  .sub { color:#f1c40f; font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin-top:5px; }
+  .updated { color:#aaa; font-size:0.7rem; margin-top:4px; }
+
+  .tabs { display:flex; gap:8px; justify-content:center; margin-bottom:18px; flex-wrap:wrap; }
+  .tab {
+    background:rgba(255,255,255,0.1); color:#fff; border:none;
+    padding:8px 18px; border-radius:20px; font-weight:700; font-size:0.75rem;
+    letter-spacing:1px; text-transform:uppercase; cursor:pointer;
+    font-family:inherit; transition:background 0.2s;
+  }
+  .tab.active { background:#9b59b6; }
+
+  .panel { display:none; } .panel.active { display:block; }
+  .wrap { max-width:700px; margin:0 auto; }
+
+  .card {
+    background:rgba(255,255,255,0.07); border-radius:12px;
+    overflow:hidden; backdrop-filter:blur(6px);
+    box-shadow:0 4px 24px rgba(0,0,0,0.4); margin-bottom:16px;
+  }
+  table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+  th {
+    background:rgba(0,0,0,0.3); color:#f1c40f;
+    text-transform:uppercase; font-size:0.65rem; letter-spacing:1px;
+    padding:10px 8px; text-align:left;
+  }
+  td { padding:10px 8px; border-bottom:1px solid rgba(255,255,255,0.05); }
+  tr:last-child td { border-bottom:none; }
+  tr.top td { background:rgba(241,196,15,0.08); }
+  .rank { width:36px; text-align:center; font-size:1.1rem; }
+  .player { font-weight:700; }
+  .pts { font-weight:900; color:#f1c40f; text-align:center; }
+  .center { text-align:center; color:#ccc; }
+  .badge {
+    display:inline-block; border-radius:4px; padding:2px 5px;
+    font-size:0.65rem; font-weight:900; margin:1px;
+  }
+  .badge.win { background:#27ae60; }
+  .badge.draw { background:#f39c12; color:#111; }
+  .badge.loss { background:#c0392b; }
+  .badge.pending { background:#555; color:#aaa; }
+</style>
+</head>
+<body>
+<div class="header">
+  <span class="trophy">⚽</span>
+  <h1>Platell Family Pool</h1>
+  <div class="sub">FIFA World Cup 2026 — Group Stage</div>
+  <div class="updated">Updated 14 Jun 2026, 10:20am AWST · 3pts win · 1pt draw</div>
+</div>
+<div class="wrap">
+  <div class="tabs">
+    <button class="tab active" data-tab="board">Leaderboard</button>
+    <button class="tab" data-tab="teams">All Teams</button>
+  </div>
+
+  <div class="panel active" id="board">
+    <div class="card">
+      <table>
+        <thead><tr>
+          <th class="rank">#</th><th>Player</th>
+          <th class="center">W</th><th class="center">D</th><th class="center">L</th>
+          <th class="pts">Pts</th>
+        </tr></thead>
+        <tbody>
+        <tr class="top">
+          <td class="rank">🥇</td>
+          <td class="player">Chris</td>
+          <td class="center">2</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="pts">6</td>
+        </tr>
+        <tr class="">
+          <td class="rank">🥈</td>
+          <td class="player">Terri</td>
+          <td class="center">1</td>
+          <td class="center">1</td>
+          <td class="center">0</td>
+          <td class="pts">4</td>
+        </tr>
+        <tr class="">
+          <td class="rank">🥉</td>
+          <td class="player">Georgia</td>
+          <td class="center">0</td>
+          <td class="center">1</td>
+          <td class="center">0</td>
+          <td class="pts">1</td>
+        </tr>
+        <tr class="">
+          <td class="rank">4</td>
+          <td class="player">Mark</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="center">1</td>
+          <td class="pts">0</td>
+        </tr>
+        <tr class="">
+          <td class="rank">5</td>
+          <td class="player">George</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="pts">0</td>
+        </tr>
+        <tr class="">
+          <td class="rank">6</td>
+          <td class="player">Sam</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="pts">0</td>
+        </tr>
+        <tr class="">
+          <td class="rank">7</td>
+          <td class="player">Connor</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="pts">0</td>
+        </tr>
+        <tr class="">
+          <td class="rank">8</td>
+          <td class="player">Nic</td>
+          <td class="center">0</td>
+          <td class="center">0</td>
+          <td class="center">2</td>
+          <td class="pts">0</td>
+        </tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel" id="teams">
+    <div class="card">
+      <table>
+        <thead><tr>
+          <th>Team</th><th>Player</th><th class="center">Results</th><th class="pts">Pts</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>🇪🇸 Spain</td>
+          <td>Mark</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇩🇿 Algeria</td>
+          <td>Mark</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇯🇵 Japan</td>
+          <td>Mark</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇩 Congo DR</td>
+          <td>Mark</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇵🇾 Paraguay</td>
+          <td>Mark</td>
+          <td class="center"><span class="badge loss">L</span></td>
+          <td class="pts">0</td>
+        </tr>
+        <tr>
+          <td>🇭🇹 Haiti</td>
+          <td>Mark</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇲🇦 Morocco</td>
+          <td>Terri</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇵🇹 Portugal</td>
+          <td>Terri</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇰🇷 Korea Republic</td>
+          <td>Terri</td>
+          <td class="center"><span class="badge win">W</span></td>
+          <td class="pts">3</td>
+        </tr>
+        <tr>
+          <td>🇧🇦 Bosnia & Herz.</td>
+          <td>Terri</td>
+          <td class="center"><span class="badge draw">D</span></td>
+          <td class="pts">1</td>
+        </tr>
+        <tr>
+          <td>🇵🇦 Panama</td>
+          <td>Terri</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇪🇬 Egypt</td>
+          <td>Terri</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇳🇱 Netherlands</td>
+          <td>George</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇶🇦 Qatar</td>
+          <td>George</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇬🇭 Ghana</td>
+          <td>George</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇦🇹 Austria</td>
+          <td>George</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇪🇨 Ecuador</td>
+          <td>George</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇻 Cabo Verde</td>
+          <td>George</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇦🇷 Argentina</td>
+          <td>Georgia</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇦 Canada</td>
+          <td>Georgia</td>
+          <td class="center"><span class="badge draw">D</span></td>
+          <td class="pts">1</td>
+        </tr>
+        <tr>
+          <td>🇺🇾 Uruguay</td>
+          <td>Georgia</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇹🇷 Turkey</td>
+          <td>Georgia</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇳🇿 New Zealand</td>
+          <td>Georgia</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇺🇿 Uzbekistan</td>
+          <td>Georgia</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇫🇷 France</td>
+          <td>Chris</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇲🇽 Mexico</td>
+          <td>Chris</td>
+          <td class="center"><span class="badge win">W</span></td>
+          <td class="pts">3</td>
+        </tr>
+        <tr>
+          <td>🇺🇸 USA</td>
+          <td>Chris</td>
+          <td class="center"><span class="badge win">W</span></td>
+          <td class="pts">3</td>
+        </tr>
+        <tr>
+          <td>🇮🇷 Iran</td>
+          <td>Chris</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇮 Côte d'Ivoire</td>
+          <td>Chris</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇯🇴 Jordan</td>
+          <td>Chris</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</td>
+          <td>Sam</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇴 Colombia</td>
+          <td>Sam</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇼 Curaçao</td>
+          <td>Sam</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇭🇷 Croatia</td>
+          <td>Sam</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇧🇪 Belgium</td>
+          <td>Sam</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇳🇴 Norway</td>
+          <td>Sam</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇧🇷 Brazil</td>
+          <td>Connor</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇮🇶 Iraq</td>
+          <td>Connor</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇨🇭 Switzerland</td>
+          <td>Connor</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇸🇦 Saudi Arabia</td>
+          <td>Connor</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇦🇺 Australia</td>
+          <td>Connor</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇹🇳 Tunisia</td>
+          <td>Connor</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇩🇪 Germany</td>
+          <td>Nic</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</td>
+          <td>Nic</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇸🇳 Senegal</td>
+          <td>Nic</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇸🇪 Sweden</td>
+          <td>Nic</td>
+          <td class="center"><span class="badge pending">–</span></td>
+          <td class="pts">–</td>
+        </tr>
+        <tr>
+          <td>🇿🇦 South Africa</td>
+          <td>Nic</td>
+          <td class="center"><span class="badge loss">L</span></td>
+          <td class="pts">0</td>
+        </tr>
+        <tr>
+          <td>🇨🇿 Czech Republic</td>
+          <td>Nic</td>
+          <td class="center"><span class="badge loss">L</span></td>
+          <td class="pts">0</td>
+        </tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.tab).classList.add('active');
+  }));
+</script>
+</body>
+</html>
