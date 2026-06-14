@@ -55,6 +55,28 @@
   .badge.draw { background:#f39c12; color:#111; }
   .badge.loss { background:#c0392b; }
   .badge.pending { background:#555; color:#aaa; }
+  .player-card {
+    background:rgba(255,255,255,0.07); border-radius:12px;
+    overflow:hidden; backdrop-filter:blur(6px);
+    box-shadow:0 4px 24px rgba(0,0,0,0.4); margin-bottom:12px;
+  }
+  .player-card-head {
+    background:rgba(0,0,0,0.3); padding:10px 14px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-weight:900; font-size:0.9rem; color:#f39c12;
+    text-transform:uppercase; letter-spacing:1px;
+  }
+  .player-card-body { padding:4px 0; }
+  .team-row {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:8px 14px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.85rem;
+  }
+  .team-row:last-child { border-bottom:none; }
+  .team-name { font-weight:500; }
+  .result-win { color:#2ecc71; font-weight:700; }
+  .result-draw { color:#f39c12; font-weight:700; }
+  .result-loss { color:#e74c3c; font-weight:700; }
+  .result-pending { color:#666; }
 </style>
 </head>
 <body>
@@ -62,7 +84,7 @@
   <span class="trophy">⚽</span>
   <h1>Method Health Pool</h1>
   <div class="sub">FIFA World Cup 2026 — Group Stage</div>
-  <div class="updated">Updated 14 Jun 2026, 11:33am AWST · 3pts win · 1pt draw</div>
+  <div class="updated">Updated 14 Jun 2026, 11:41am AWST · 3pts win · 1pt draw</div>
 </div>
 <div class="wrap">
   <div class="tabs">
@@ -161,6 +183,7 @@
         </tr></tbody>
       </table>
     </div>
+    <div style="margin-top:8px"><div class="player-card"><div class="player-card-head"><span>Conal</span><span>4 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇵🇹 Portugal</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇹🇷 Turkey</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇺🇿 Uzbekistan</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇧🇦 Bosnia & Herz.</span><span class="result-draw">Draw (+1)</span></div><div class="team-row"><span class="team-name">🇺🇸 USA</span><span class="result-win">Win (+3)</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Jac</span><span>3 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇲🇦 Morocco</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇲🇽 Mexico</span><span class="result-win">Win (+3)</span></div><div class="team-row"><span class="team-name">🇪🇨 Ecuador</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇶🇦 Qatar</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇸🇳 Senegal</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Dave</span><span>3 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇪🇸 Spain</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇳🇴 Norway</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇼 Curaçao</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇰🇷 Korea Republic</span><span class="result-win">Win (+3)</span></div><div class="team-row"><span class="team-name">🇳🇿 New Zealand</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Brandon</span><span>1 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇧🇪 Belgium</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇸🇪 Sweden</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇭🇷 Croatia</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇦 Canada</span><span class="result-draw">Draw (+1)</span></div><div class="team-row"><span class="team-name">🇦🇹 Austria</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Kirst</span><span>0 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇦🇷 Argentina</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇻 Cabo Verde</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇮🇶 Iraq</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Ash</span><span>0 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇭🇹 Haiti</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇿🇦 South Africa</span><span class="result-loss">Loss (0)</span></div><div class="team-row"><span class="team-name">🇯🇴 Jordan</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Mike</span><span>0 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇧🇷 Brazil</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇮 Côte d'Ivoire</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇩🇿 Algeria</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇴 Colombia</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇪🇬 Egypt</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Jesse</span><span>0 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇩🇪 Germany</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇹🇳 Tunisia</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇸🇦 Saudi Arabia</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇮🇷 Iran</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇭 Switzerland</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>Odin</span><span>0 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇳🇱 Netherlands</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇬🇭 Ghana</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇺🇾 Uruguay</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇯🇵 Japan</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇩 Congo DR</span><span class="result-pending">—</span></div></div></div><div class="player-card"><div class="player-card-head"><span>George</span><span>0 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇫🇷 France</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇦🇺 Australia</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇵🇦 Panama</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇨🇿 Czechia</span><span class="result-pending">—</span></div><div class="team-row"><span class="team-name">🇵🇾 Paraguay</span><span class="result-loss">Loss (0)</span></div></div></div></div>
   </div>
 
   <div class="panel" id="teams">
