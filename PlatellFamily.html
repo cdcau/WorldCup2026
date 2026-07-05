@@ -72,6 +72,15 @@
   .result-draw { color:#f39c12; font-weight:700; font-size:0.8rem; }
   .result-loss { color:#e74c3c; font-weight:700; font-size:0.8rem; }
   .result-pending { color:#666; font-size:0.8rem; }
+  .out-tag {
+    background:#c0392b; color:#fff; font-size:0.6rem; font-weight:900;
+    letter-spacing:0.5px; padding:2px 5px; border-radius:4px; margin-left:4px;
+  }
+  .status-live { color:#2ecc71; font-size:0.7rem; font-weight:700; text-transform:uppercase; }
+  tr.eliminated td { opacity:0.45; }
+  .team-row.eliminated { opacity:0.45; }
+  .team-row.eliminated .team-name { text-decoration:line-through; }
+  tr.eliminated td:first-child { text-decoration:line-through; }
 </style>
 </head>
 <body>
@@ -79,7 +88,7 @@
   <span class="trophy">⚽</span>
   <h1>Platell Family Pool</h1>
   <div class="sub">FIFA World Cup 2026 — Group Stage</div>
-  <div class="updated">Updated 5 Jul 2026, 12:28pm AWST · 3pts win · 1pt draw</div>
+  <div class="updated">Updated 5 Jul 2026, 12:35pm AWST · 3pts win · 1pt draw</div>
 </div>
 <div class="wrap">
   <div class="tabs">
@@ -92,6 +101,7 @@
         <thead><tr>
           <th class="rank">#</th><th>Player</th>
           <th class="center">W</th><th class="center">D</th><th class="center">L</th>
+          <th class="center">Alive</th>
           <th class="pts">Pts</th>
         </tr></thead>
         <tbody>
@@ -101,6 +111,7 @@
           <td class="center">14</td>
           <td class="center">3</td>
           <td class="center">6</td>
+          <td class="center">3/6</td>
           <td class="pts">45</td>
         </tr>
         <tr class="">
@@ -109,6 +120,7 @@
           <td class="center">13</td>
           <td class="center">5</td>
           <td class="center">5</td>
+          <td class="center">4/6</td>
           <td class="pts">44</td>
         </tr>
         <tr class="">
@@ -117,6 +129,7 @@
           <td class="center">8</td>
           <td class="center">8</td>
           <td class="center">7</td>
+          <td class="center">3/6</td>
           <td class="pts">32</td>
         </tr>
         <tr class="">
@@ -125,6 +138,7 @@
           <td class="center">7</td>
           <td class="center">7</td>
           <td class="center">10</td>
+          <td class="center">1/6</td>
           <td class="pts">28</td>
         </tr>
         <tr class="">
@@ -133,6 +147,7 @@
           <td class="center">7</td>
           <td class="center">6</td>
           <td class="center">8</td>
+          <td class="center">3/6</td>
           <td class="pts">27</td>
         </tr>
         <tr class="">
@@ -141,6 +156,7 @@
           <td class="center">7</td>
           <td class="center">4</td>
           <td class="center">10</td>
+          <td class="center">1/6</td>
           <td class="pts">25</td>
         </tr>
         <tr class="">
@@ -149,6 +165,7 @@
           <td class="center">5</td>
           <td class="center">9</td>
           <td class="center">9</td>
+          <td class="center">1/6</td>
           <td class="pts">24</td>
         </tr>
         <tr class="">
@@ -157,305 +174,354 @@
           <td class="center">6</td>
           <td class="center">4</td>
           <td class="center">12</td>
+          <td class="center">1/6</td>
           <td class="pts">22</td>
         </tr></tbody>
       </table>
     </div>
-    <div style="margin-top:8px"><div class="player-card"><div class="player-card-head"><span>Chris</span><span>45 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇫🇷 France</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span></span></div><div class="team-row"><span class="team-name">🇲🇽 Mexico</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span></span></div><div class="team-row"><span class="team-name">🇺🇸 USA</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇮🇷 Iran</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇨🇮 Côte d'Ivoire</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇯🇴 Jordan</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Sam</span><span>44 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇨🇴 Colombia</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇨🇼 Curaçao</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇭🇷 Croatia</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇧🇪 Belgium</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇳🇴 Norway</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Terri</span><span>32 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇲🇦 Morocco</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇵🇹 Portugal</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇰🇷 Korea Republic</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇧🇦 Bosnia & Herz.</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇵🇦 Panama</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇪🇬 Egypt</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Mark</span><span>28 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇪🇸 Spain</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇩🇿 Algeria</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇯🇵 Japan</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇨🇩 Congo DR</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇵🇾 Paraguay</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇭🇹 Haiti</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Connor</span><span>27 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇧🇷 Brazil</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇮🇶 Iraq</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇨🇭 Switzerland</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇸🇦 Saudi Arabia</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇦🇺 Australia</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇹🇳 Tunisia</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Georgia</span><span>25 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇦🇷 Argentina</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span></span></div><div class="team-row"><span class="team-name">🇨🇦 Canada</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇺🇾 Uruguay</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇹🇷 Turkey</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇳🇿 New Zealand</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇺🇿 Uzbekistan</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>George</span><span>24 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇳🇱 Netherlands</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇶🇦 Qatar</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇬🇭 Ghana</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇦🇹 Austria</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇪🇨 Ecuador</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇨🇻 Cabo Verde</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Nic</span><span>22 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇩🇪 Germany</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇸🇳 Senegal</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇸🇪 Sweden</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇿🇦 South Africa</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row"><span class="team-name">🇨🇿 Czechia</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span></span></div></div></div></div>
+    <div style="margin-top:8px"><div class="player-card"><div class="player-card-head"><span>Chris</span><span>45 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇫🇷 France</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span></span></div><div class="team-row"><span class="team-name">🇲🇽 Mexico</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span></span></div><div class="team-row"><span class="team-name">🇺🇸 USA</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row eliminated"><span class="team-name">🇮🇷 Iran</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇨🇮 Côte d'Ivoire</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇯🇴 Jordan</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Sam</span><span>44 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇨🇴 Colombia</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row eliminated"><span class="team-name">🇨🇼 Curaçao</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇭🇷 Croatia</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row"><span class="team-name">🇧🇪 Belgium</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇳🇴 Norway</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Terri</span><span>32 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇲🇦 Morocco</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row"><span class="team-name">🇵🇹 Portugal</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row eliminated"><span class="team-name">🇰🇷 Korea Republic</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇧🇦 Bosnia & Herz.</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇵🇦 Panama</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row"><span class="team-name">🇪🇬 Egypt</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Mark</span><span>28 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇪🇸 Spain</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row eliminated"><span class="team-name">🇩🇿 Algeria</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇯🇵 Japan</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇨🇩 Congo DR</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇵🇾 Paraguay</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇭🇹 Haiti</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Connor</span><span>27 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇧🇷 Brazil</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row eliminated"><span class="team-name">🇮🇶 Iraq</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row"><span class="team-name">🇨🇭 Switzerland</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row eliminated"><span class="team-name">🇸🇦 Saudi Arabia</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row"><span class="team-name">🇦🇺 Australia</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row eliminated"><span class="team-name">🇹🇳 Tunisia</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Georgia</span><span>25 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇦🇷 Argentina</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span></span></div><div class="team-row eliminated"><span class="team-name">🇨🇦 Canada</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇺🇾 Uruguay</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇹🇷 Turkey</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇳🇿 New Zealand</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇺🇿 Uzbekistan</span><span class="result-badges"><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>George</span><span>24 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇳🇱 Netherlands</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span></span></div><div class="team-row eliminated"><span class="team-name">🇶🇦 Qatar</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇬🇭 Ghana</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇦🇹 Austria</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇪🇨 Ecuador</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇨🇻 Cabo Verde</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div></div></div><div class="player-card"><div class="player-card-head"><span>Nic</span><span>22 pts</span></div><div class="player-card-body"><div class="team-row"><span class="team-name">🇩🇪 Germany</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span></span></div><div class="team-row eliminated"><span class="team-name">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇸🇳 Senegal</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇸🇪 Sweden</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇿🇦 South Africa</span><span class="result-badges"><span class="result-win">Win (+3)</span><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div><div class="team-row eliminated"><span class="team-name">🇨🇿 Czechia</span><span class="result-badges"><span class="result-draw">Draw (+1)</span><span class="result-loss">Loss (0)</span><span class="result-loss">Loss (0)</span><span class="out-tag">OUT</span></span></div></div></div></div>
   </div>
   <div class="panel" id="teams">
     <div class="card">
       <table>
         <thead><tr>
-          <th>Team</th><th>Player</th><th class="center">Results</th><th class="pts">Pts</th>
+          <th>Team</th><th>Player</th><th class="center">Results</th><th class="center">Status</th><th class="pts">Pts</th>
         </tr></thead>
         <tbody>
-        <tr>
+        <tr class="">
           <td>🇪🇸 Spain</td>
           <td>Mark</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">10</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇩🇿 Algeria</td>
           <td>Mark</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇯🇵 Japan</td>
           <td>Mark</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">5</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇨🇩 Congo DR</td>
           <td>Mark</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇵🇾 Paraguay</td>
           <td>Mark</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">5</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇭🇹 Haiti</td>
           <td>Mark</td>
           <td class="center"><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">0</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇲🇦 Morocco</td>
           <td>Terri</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">11</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇵🇹 Portugal</td>
           <td>Terri</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">8</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇰🇷 Korea Republic</td>
           <td>Terri</td>
           <td class="center"><span class="badge win">W</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">3</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇧🇦 Bosnia & Herz.</td>
           <td>Terri</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇵🇦 Panama</td>
           <td>Terri</td>
           <td class="center"><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">0</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇪🇬 Egypt</td>
           <td>Terri</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">6</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇳🇱 Netherlands</td>
           <td>George</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">8</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇶🇦 Qatar</td>
           <td>George</td>
           <td class="center"><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">1</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇬🇭 Ghana</td>
           <td>George</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇦🇹 Austria</td>
           <td>George</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇪🇨 Ecuador</td>
           <td>George</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇨🇻 Cabo Verde</td>
           <td>George</td>
           <td class="center"><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">3</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇦🇷 Argentina</td>
           <td>Georgia</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">12</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇨🇦 Canada</td>
           <td>Georgia</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">7</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇺🇾 Uruguay</td>
           <td>Georgia</td>
           <td class="center"><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">2</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇹🇷 Turkey</td>
           <td>Georgia</td>
           <td class="center"><span class="badge win">W</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">3</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇳🇿 New Zealand</td>
           <td>Georgia</td>
           <td class="center"><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">1</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇺🇿 Uzbekistan</td>
           <td>Georgia</td>
           <td class="center"><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">0</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇫🇷 France</td>
           <td>Chris</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">15</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇲🇽 Mexico</td>
           <td>Chris</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">12</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇺🇸 USA</td>
           <td>Chris</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">9</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇮🇷 Iran</td>
           <td>Chris</td>
           <td class="center"><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">3</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇨🇮 Côte d'Ivoire</td>
           <td>Chris</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">6</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇯🇴 Jordan</td>
           <td>Chris</td>
           <td class="center"><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">0</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</td>
           <td>Sam</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">10</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇨🇴 Colombia</td>
           <td>Sam</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">10</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇨🇼 Curaçao</td>
           <td>Sam</td>
           <td class="center"><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">1</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇭🇷 Croatia</td>
           <td>Sam</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">6</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇧🇪 Belgium</td>
           <td>Sam</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">8</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇳🇴 Norway</td>
           <td>Sam</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">9</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇧🇷 Brazil</td>
           <td>Connor</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">10</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇮🇶 Iraq</td>
           <td>Connor</td>
           <td class="center"><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">0</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇨🇭 Switzerland</td>
           <td>Connor</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">10</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇸🇦 Saudi Arabia</td>
           <td>Connor</td>
           <td class="center"><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">2</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇦🇺 Australia</td>
           <td>Connor</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge draw">D</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">5</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇹🇳 Tunisia</td>
           <td>Connor</td>
           <td class="center"><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">0</td>
         </tr>
-        <tr>
+        <tr class="">
           <td>🇩🇪 Germany</td>
           <td>Nic</td>
           <td class="center"><span class="badge win">W</span><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="status-live">Alive</span></td>
           <td class="pts">7</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</td>
           <td>Nic</td>
           <td class="center"><span class="badge win">W</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">3</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇸🇳 Senegal</td>
           <td>Nic</td>
           <td class="center"><span class="badge win">W</span><span class="badge loss">L</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">3</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇸🇪 Sweden</td>
           <td>Nic</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇿🇦 South Africa</td>
           <td>Nic</td>
           <td class="center"><span class="badge win">W</span><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">4</td>
         </tr>
-        <tr>
+        <tr class="eliminated">
           <td>🇨🇿 Czechia</td>
           <td>Nic</td>
           <td class="center"><span class="badge draw">D</span><span class="badge loss">L</span><span class="badge loss">L</span></td>
+          <td class="center"><span class="out-tag">OUT</span></td>
           <td class="pts">1</td>
         </tr></tbody>
       </table>
